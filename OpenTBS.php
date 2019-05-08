@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace hscstudio\export;
+namespace lucianoes\export;
 
 
 /**
@@ -13,9 +13,9 @@ namespace hscstudio\export;
  *
 ```
 // Initalize the TBS instance
-	$TBS = new \hscstudio\heart\extensions\OpenTBS; // new instance of TBS
+	$TBS = new \lucianoes\heart\extensions\OpenTBS; // new instance of TBS
 	
-	$template = Yii::getAlias('@hscstudio/export').'/templates/OpenTBS.template.docx';
+	$template = Yii::getAlias('@lucianoes/export').'/templates/OpenTBS.template.docx';
 	$TBS->LoadTemplate($template); // Also merge some [onload] automatic fields (depends of the type of document).
 	$TBS->VarRef['yourname']= "Employee";
 	$data1 = [
@@ -36,8 +36,8 @@ namespace hscstudio\export;
 	//exit;
 ``` 
  *
- * @author Hafid Mukhlasin <hafidmukhlasin@gmail.com>
- * @since 2.0
+ * @author Luciano Silva <lucianoes10@gmail.com>
+ * @since 2.1
  */
  
 class OpenTBS extends \clsTinyButStrong

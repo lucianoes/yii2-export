@@ -11,7 +11,7 @@ if (version_compare(PHP_VERSION,'5.1.0')>=0) {
 	}
 }
 
-// Initalize the TBS instance
+// Initialize the TBS instance
 $TBS = new clsTinyButStrong; // new instance of TBS
 $TBS->Plugin(TBS_INSTALL, OPENTBS_PLUGIN); // load the OpenTBS plugin
 
@@ -43,7 +43,7 @@ $x_delete = 1;
 // -----------------
 
 $template = 'demo_ms_powerpoint.pptx';
-$TBS->LoadTemplate($template); // Also merge some [onload] automatic fields (depends of the type of document).
+$TBS->LoadTemplate($template, OPENTBS_ALREADY_UTF8); // Also merge some [onload] automatic fields (depends of the type of document).
 
 // ----------------------
 // Debug mode of the demo
@@ -59,7 +59,7 @@ if (isset($_POST['debug']) && ($_POST['debug']=='show'))    $TBS->Plugin(OPENTBS
 // Select slide #2
 $TBS->Plugin(OPENTBS_SELECT_SLIDE, 2);
 // Change a picture using the command (it can also be done at the template side using parameter "ope=changepic")
-$TBS->Plugin(OPENTBS_CHANGE_PICTURE, '#merge_me#', 'pic_1234f.png');
+$TBS->Plugin(OPENTBS_CHANGE_PICTURE, '#merge_me#', 'pic_1234f.png', array('unique' => 1));
 
 // Merge a chart
 $ChartRef = 'my_chart'; // Title of the shape that embeds the chart
@@ -67,7 +67,6 @@ $SeriesNameOrNum = 1;
 $NewValues = array( array('Cat. A','Cat. B','Cat. C','Cat. D'), array(0.7, 1.0, 3.2, 4.8) );
 $NewLegend = "Merged";
 $TBS->PlugIn(OPENTBS_CHART, $ChartRef, $SeriesNameOrNum, $NewValues, $NewLegend);
-
 
 // -----------------
 // Output the result

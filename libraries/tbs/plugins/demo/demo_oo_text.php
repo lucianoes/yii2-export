@@ -11,7 +11,7 @@ if (version_compare(PHP_VERSION,'5.1.0')>=0) {
 	}
 }
 
-// Initalize the TBS instance
+// Initialize the TBS instance
 $TBS = new clsTinyButStrong; // new instance of TBS
 $TBS->Plugin(TBS_INSTALL, OPENTBS_PLUGIN); // load the OpenTBS plugin
 
@@ -43,7 +43,7 @@ $x_delete = 1;
 // -----------------
 
 $template = 'demo_oo_text.odt';
-$TBS->LoadTemplate($template); // Also merge some [onload] automatic fields (depends of the type of document).
+$TBS->LoadTemplate($template, OPENTBS_ALREADY_UTF8); // Also merge some [onload] automatic fields (depends of the type of document).
 
 // ----------------------
 // Debug mode of the demo
@@ -68,7 +68,6 @@ $TBS->PlugIn(OPENTBS_CHART, $ChartNameOrNum, $SeriesNameOrNum, $NewValues, $NewL
 
 // Delete comments
 $TBS->PlugIn(OPENTBS_DELETE_COMMENTS);
-
 
 // -----------------
 // Output the result
